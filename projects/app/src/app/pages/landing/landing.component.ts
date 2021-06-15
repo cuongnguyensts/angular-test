@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { noop } from 'rxjs';
 
 @Component({
   templateUrl: './landing.component.html',
@@ -6,7 +8,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingComponent {
+  public constructor(private router: Router) {}
+
   public proceed(): void {
-    console.log('Action');
+    this.router.navigate(['/table']).then(noop);
   }
 }
