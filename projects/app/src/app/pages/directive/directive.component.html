@@ -1,0 +1,4 @@
+<app-shared-header></app-shared-header>
+<div class="content" *ngIf="text$ | async as text">
+  <div [appCustomContent]="text"></div>
+</div>
